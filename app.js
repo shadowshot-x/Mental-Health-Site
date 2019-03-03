@@ -20,14 +20,14 @@ const smsRouter=require('./routes/sms');
 var app = express();
 
 var oktaClient = new okta.Client({
-  orgUrl: 'https://dev-393933.oktapreview.com',
-  token: '00TTYjvBtjreR0-Ono6bjdkduDXrYjs-FTNJHZMOyW'
+  orgUrl: 'https://dev-732356.okta.com',
+  token: '00MLKh7sM42jd1grDu0UJIlF1g8QcRuJ_NUCOjP9mZ'
 });
 const oidc = new ExpressOIDC({
-  issuer: "https://dev-393933.oktapreview.com/oauth2/default",
-  client_id: "0oajcshrijgTaAeSA0h7",
-  client_secret: "mSqON1jLGGx4M2uyzYSLuwNtkqDT7Isatd8oZpl4",
-  redirect_uri: 'http://mental-health-site.herokuapp.com/users/callback',
+  issuer: "https://dev-732356.okta.com/oauth2/default",
+  client_id: "0oabu9cwxcMhCFyUC356",
+  client_secret: "aWiJrgV41SxBBh9S2BGn5zfmnvi0DPQYtrBBt_nB",
+  redirect_uri: "https://mental-health-site.herokuapp.com/users/callback",
   scope: "openid profile",
   routes: {
     login: {
