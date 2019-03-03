@@ -1,0 +1,33 @@
+html
+    head
+        title MY APP
+        style.
+            a{ text-decoration: none !important;}
+        link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+        link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link( href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+
+    body
+        nav
+            div.nav-wrapper.bg-primary.pl-5.pr-5
+                a( href="/blog/list" class="brand-logo") Blog
+                ul( id="nav-mobile" class="right hide-on-med-and-down")
+                    li
+                        a( href="/") The Main Page
+                    li
+                        a( href="/blog") Make a Post
+
+        each quote in quotes
+            div.card.container( style="width:600px;")
+                div.card-image.waves-effect.waves-block.waves-light( style="height:200px;")
+                    img.activator( src="http://lorempixel.com/400/200/nature" style="max-width:100%;max-height:100%;margin:auto;display:block;")
+                div.card-content
+                    span.card-title.activator.grey-text.text-darken-4 #{quote.name }
+                        i.material-icons.right more_vert
+                div.card-reveal
+                    span.card-title.grey-text.text-darken-4 #{quote.name} 
+                        i.material-icons.right close
+                    p #{quote.article} 
+      
+        script( src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js")
+        script( src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")

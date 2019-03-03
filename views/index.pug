@@ -1,0 +1,50 @@
+extends layout
+
+block variables
+  - var title = "Home"
+
+block content
+  section(id="section01" class="demo")
+    h1 Some days are just bad days, that's all.
+    a(href="#section02")
+      span 
+
+  section(id="section02" class="demo")
+    h1 Need Immediate Help?
+    h3 Dont Hesitate!
+    a.Sneha(href="https://snehaindia.org/new/") Sneha Health Foundation
+    div.contant-sneha
+      i.medium.material-icons phone_android
+      span +91 44 2464 0060 
+    a(href="#section03")
+      span 
+
+  section(id="section03" class="demo")
+    a.sec03(href="/blog/list") 
+      h1 Bored? Grab a Glimpse Of our Blog
+    a(href="#section04")
+      span 
+
+  section(id="section04" class="demo")
+    a.sec03(href="/poll") 
+      h1 Let us Know Something About You
+    a(href="#section05")
+      span 
+
+  section(id="section05" class="demo")
+    h1 Want to Chat with Randoms? 
+    h3 Please Login To Access Chat Box
+    a(href="#section06")
+      span 
+
+  section(id="section06" class="demo")
+    h1 Thanks and You are Awesome
+
+  script. 
+    $(function() {
+      $('a[href*=#]').on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+      });
+    });
+         

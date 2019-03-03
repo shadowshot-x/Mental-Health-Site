@@ -1,0 +1,35 @@
+block variables
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    style(type="text/css").
+      a{text-decoration:none !important;}
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js')
+    script(src="http://code.jquery.com/jquery-1.11.1.js")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    title Happy: #{title}
+  body
+      div.navbar-fixed(style="color: #039be5;")
+        nav.nav-wrapper.bg-primary.pl-5.pr-5
+          a.brand-logo(href="/", title="Home") Home
+
+          if user == undefined
+            a.right.hide-on-med-and-down(href="/users/login") Log In / Register
+          else
+            a.right.hide-on-med-and-down.pl-2.pr-2(href="/dashboard") Dashboard
+            a.right.hide-on-med-and-down.pl-2.pr-2(href="/chat") Chat-Box
+            a.right.hide-on-med-and-down.pl-2.pr-2(href="/users/logout") Logout
+            a.right.hide-on-med-and-down.pl-2.pr-2(href="/poll") Wanna Vote?
+            a.right.hide-on-med-and-down.pl-2.pr-2(href="/blog/list") Blog
+     
+      block content
+
+      //- footer.
+      //-     Built with #[a(href="https://expressjs.com/") Express.js], login powered by #[a(href="https://developer.okta.com/") Okta].
+      //-     As you can probably figure out if you're at all familiar with HTML, pug is very similar to HT

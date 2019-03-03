@@ -1,0 +1,10 @@
+html
+	head 
+		title sms
+	body
+		form.sms.container
+			input(type="tel" name="number" placeholder="15551231234" required)
+			input(type="text" name="text" placeholder="Hello")
+			input(type="button", value="Send SMS")
+
+		script( src="/javascripts/sms-request.js")

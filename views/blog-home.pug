@@ -1,0 +1,27 @@
+html
+    head
+        title MY APP
+        style.
+            a{ text-decoration: none !important;}
+        link( rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+    body
+        nav
+            div.nav-wrapper.bg-primary.pl-5.pr-5
+                a( href="#" class="brand-logo") Blog
+                ul( id="nav-mobile" class="right hide-on-med-and-down")
+                    li
+                        a( href="/") The Main Page
+                    li
+                        a( href="/list") The Posts
+        div.container.z-depth-5.p-5.mt-5.bg-primary( style="padding: 60px;text-align: center;color: white;font-size: 30px;")
+            h3.header Hi! Please Ponder to These Before Writing<br>
+            div The Posts Will be Deleted For Inappropriate Content
+            div Please Make sure your article is of more than 300 Words<br>
+            div Happy Writing ;-)  
+        div.container.Blog-Form(style="margin-top:5%;")
+            form( action="/quotes" class="z-depth-5" method="POST" style="padding:5%;")
+                input( type="text" placeholder="Title for your Article" name="name" style="width: 200px;" required)
+                textarea(class="materialize-textarea" placeholder="Article" minlength="300" name="article" style="height: 200px;" required)
+                button.btn-primary.btn.btn-large( type="submit") Submit
+    

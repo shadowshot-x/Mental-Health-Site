@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+html
+        head
+                meta(charset="UTF-8")
+                meta(name="viewport" content="width=device-width, initial-scale=1.0")
+                meta(http-equiv="X-UA-Compatible" content="ie=edge")
+                title Polling App
+                link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+                link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+
+        body
+                nav
+                        div(class="nav-wrapper bg-primary pl-5 pr-5")
+                                a(href="http://localhost:3002/" class="brand-logo") Poll
+                                ul(id="nav-mobile" class="right hide-on-med-and-down")
+                                        li
+                                                a( href="/") The Main Page
+                                        li
+                                                a( href="/blog/list") Blog
+                        
+                div.container
+                        h1 World Happiness Measure
+                        p Please Vote Your Happiness Level as of Right-Now
+                        form( id="vote-form")
+                                p
+                                        input( type="radio" name="os" id="firstq" style="pointer-events: visible; position: static;opacity: 1;" value="Firstq")
+                                        label( for="windows") 0-25 %
+                
+                                p
+                                        input( type="radio" name="os" id="secondq" style="pointer-events: visible; position: static;opacity: 1;" value="Secondq")
+                                        label( for="linux") 25-50 %
+                
+                                p
+                                        input( type="radio" name="os" id="thirdq" style="pointer-events: visible; position: static;opacity: 1;" value="Thirdq")
+                                        label( for="MacOs") 50-75 %
+                        
+                                p
+                                        input( type="radio" name="os" id="fourthq" style="pointer-events: visible; position: static;opacity: 1;" value="Fourthq")
+                                        label( for="MacOs") 75-100%
+
+                                input( action="/poll" type="submit" value="Vote" style="opacity: 1;" class="btn")
+                
+                div( id="chartContainer" style="height:300px;width:100%;")
+                
+        
+
+                script( src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous")
+                script( src="https://cdnjs.cloudflare.com/ajax/libs/pusher/4.4.0/pusher.min.js")
+                script( src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js")
+                script( src="/javascripts/main-poll.js")

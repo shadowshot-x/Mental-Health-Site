@@ -1,0 +1,36 @@
+extends layout
+
+block variables
+  - var title = "Chat-Box"
+//- link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+block content
+  h2.text-center Chat-Box
+
+    .row
+        .offset-sm-2.col-sm-8
+          .jumbotron.text-center.
+            Welcome to the Discussions #{user.profile.firstName}.
+
+  
+    form.container.text-center(action="")
+        //- input.rounded(type="text" id="m" style="width:auto;" placeholder="Enter Something" autocomplete="off")
+        div.md-form
+          textarea.md-textarea.form-control.mb-3(id="m",type="text", rows="1",cols="1")
+          //- label(for="m") Enter Text
+        button.ml-3.mb-2.button.btn.btn-primary Send
+
+    ul.border.rounded.border-primary.mt-5(id="messages")
+
+  script.
+        $(function () {
+                var socket = io();
+                $('form').submit(function(e){
+                e.preventDefault(); // prevents page reloading
+                socket.emit('chat message', $('#m').val());
+                $('#m').val('');
+                return false;
+                });
+                socket.on('chat message', function(msg){
+                $('#messages').append('<div class="text-center d-inline mt-4 mb-4 pt-4 pb-4" style="font-size:30px"><span class="float-left well" > #{user.profile.firstName} : </span><span> '+msg+'</span></div><br>');
+                });
+            });
