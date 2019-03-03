@@ -27,7 +27,7 @@ const oidc = new ExpressOIDC({
   issuer: "https://dev-393933.oktapreview.com/oauth2/default",
   client_id: "0oajcshrijgTaAeSA0h7",
   client_secret: "mSqON1jLGGx4M2uyzYSLuwNtkqDT7Isatd8oZpl4",
-  redirect_uri: 'https://mental-health-site.herokuapp.com/users/callback',
+  redirect_uri: 'http://mental-health-site.herokuapp.com//users/callback',
   scope: "openid profile",
   routes: {
     login: {
