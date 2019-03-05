@@ -107,7 +107,7 @@ section h1 {
   white-space: nowrap;
 }
 
-.img-dashboard{background: url(https://picsum.photos/850/300/?blur) center center / cover no-repeat;
+.img-dashboard{background: url(https://picsum.photos/g/850/300/) center center / cover no-repeat;
   font : normal 300 64px/1 'Josefin Sans', sans-serif;
   color: white; }
 
